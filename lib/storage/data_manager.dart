@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:nst_test/model/data.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:xml/xml.dart' as xml;
+import 'package:path_provider/path_provider.dart';
 
 const kDataListKey = 'dataList';
 
@@ -69,10 +70,10 @@ Future saveDataListToFile(List dataList, String date) async {
 
   final xmlString = xmlBuilder.buildDocument().toXmlString(pretty: true);
 
-  const path = '/storage/emulated/0/Download';
+  final path = await getDownloadsDirectory();
 
   final filePath = '$path/$fileName';
-  log(path);
+  log('$path');
 
   final file = File(filePath);
 
