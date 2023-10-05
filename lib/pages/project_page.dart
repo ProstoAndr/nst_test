@@ -69,6 +69,11 @@ class ProjectPage extends StatelessWidget {
                         'shared_preferences - для хранении в памяти устройства',
                         style: TextStyle(fontSize: 16,)
                     ),
+                    SizedBox(height: 16),
+                    Text(
+                        'path_provider - для сохранения файла на устройство',
+                        style: TextStyle(fontSize: 16,)
+                    ),
                   ],
                 ),
               ],
