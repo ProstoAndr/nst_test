@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:io';
 
 import 'package:nst_test/model/data.dart';
@@ -6,8 +5,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:xml/xml.dart' as xml;
 import 'package:path_provider/path_provider.dart';
 
+/// The key used to store and retrieve the data list in SharedPreferences.
 const kDataListKey = 'dataList';
 
+/// Loads the data list from SharedPreferences.
+
+/// @return A Future representing the list of Data objects.
 Future<List<Data>> loadDataList() async {
   final prefs = await SharedPreferences.getInstance();
   final dataIds = prefs.getStringList(kDataListKey);
@@ -34,6 +37,9 @@ Future<List<Data>> loadDataList() async {
   }
 }
 
+/// Saves the given Data object to SharedPreferences.
+
+/// @param newData The Data object to be saved.
 Future saveData(Data newData) async {
   final prefs = await SharedPreferences.getInstance();
 
@@ -50,6 +56,10 @@ Future saveData(Data newData) async {
   await prefs.setStringList(kDataListKey, dataIds);
 }
 
+/// Saves the given list of Data objects to a file in XML format.
+
+/// @param dataList The list of Data objects to be saved.
+/// @param date The date for the file name.
 Future saveDataListToFile(List dataList, String date) async {
   final xmlBuilder = xml.XmlBuilder();
 
@@ -73,7 +83,6 @@ Future saveDataListToFile(List dataList, String date) async {
   final path = await getDownloadsDirectory();
 
   final filePath = '$path/$fileName';
-  log('$path');
 
   final file = File(filePath);
 

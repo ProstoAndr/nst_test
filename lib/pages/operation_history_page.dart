@@ -5,6 +5,7 @@ import 'package:nst_test/storage/data_manager.dart';
 import 'package:nst_test/pages/home_page.dart';
 
 class HistoryPage extends StatefulWidget {
+  /// Constructs a new instance of HistoryPage.
   const HistoryPage({super.key});
 
   @override

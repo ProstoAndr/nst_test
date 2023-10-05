@@ -10,6 +10,7 @@ import 'package:nst_test/pages/project_page.dart';
 import 'package:nst_test/storage/data_manager.dart';
 
 class HomePage extends StatefulWidget {
+  /// Constructs a new instance of HomePage.
   const HomePage({Key? key}) : super(key: key);
 
   @override

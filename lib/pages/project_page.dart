@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nst_test/pages/home_page.dart';
 
 class ProjectPage extends StatelessWidget {
+  /// Constructs a new instance of ProjectPage.
   const ProjectPage({super.key});
 
   @override
@@ -61,7 +62,7 @@ class ProjectPage extends StatelessWidget {
                         style: TextStyle(fontSize: 16,)
                     ),
                     SizedBox(height: 16),
-                    Text('intl - для форатироаниии даты',
+                    Text('intl - для форматировании даты',
                         style: TextStyle(fontSize: 16,)
                     ),
                     SizedBox(height: 16),
